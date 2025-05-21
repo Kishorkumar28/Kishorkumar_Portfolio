@@ -28,15 +28,19 @@ const HeroSection: FC = () => {
             </p>
             <div className="flex flex-col sm:flex-row justify-center items-center gap-4 animate-fade-in-up animation-delay-300">
               <Button asChild size="lg" className="shadow-lg hover:shadow-xl transition-shadow duration-300">
-                <Link href="/projects">
-                  <Briefcase className="mr-2 h-5 w-5" />
-                  View My Work
+                <Link href="/projects"> {/* Removed passHref and legacyBehavior */}
+                  <span className="flex items-center gap-2">
+                    <Briefcase className="mr-2 h-5 w-5" />
+                    View My Work
+                  </span>
                 </Link>
               </Button>
               <Button asChild variant="outline" size="lg" className="shadow-lg hover:shadow-xl transition-shadow duration-300">
-                <Link href="#about">
-                  <ArrowDown className="mr-2 h-5 w-5" /> 
-                  Learn More About Me
+                <Link href="#about"> {/* Removed passHref and legacyBehavior */}
+                  <span className="flex items-center gap-2">
+                    <ArrowDown className="mr-2 h-5 w-5" /> 
+                    Learn More About Me
+                  </span>
                 </Link>
               </Button>
             </div>
@@ -53,5 +57,3 @@ const HeroSection: FC = () => {
 };
 
 export default HeroSection;
-
-    
