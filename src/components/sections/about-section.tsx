@@ -1,21 +1,59 @@
+
+"use client";
+
 import type { FC } from 'react';
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
+import { useEffect, useRef } from 'react';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { siteConfig, skills } from '@/lib/constants';
 import { Award, Brain, Code, Users } from 'lucide-react';
 import Image from 'next/image';
 
+gsap.registerPlugin(ScrollTrigger);
+
 const AboutSection: FC = () => {
   const mainSkills = skills.filter(skill => ['React', 'Node.js', 'MongoDB', 'Express.js', 'Next.js'].includes(skill.name)).slice(0, 5);
+  const sectionRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const el = sectionRef.current;
+    if (el) {
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: el,
+          start: "top 85%", // When the top of the section is 85% from the top of the viewport
+          end: "top 35%",   // When the top of the section is 35% from the top of the viewport
+          scrub: 1,       // Smooth scrubbing, ties animation progress to scroll
+        }
+      });
+
+      tl.fromTo(el, 
+        { scale: 0.8, opacity: 0 }, 
+        { scale: 1, opacity: 1, ease: "power2.inOut", duration: 1 }
+      );
+      
+      // Cleanup GSAP animation and ScrollTrigger instance on component unmount
+      return () => {
+        tl.kill();
+        ScrollTrigger.getAll().forEach(instance => {
+          if (instance.trigger === el) {
+            instance.kill();
+          }
+        });
+      };
+    }
+  }, []);
 
   return (
     <section 
       id="about" 
-      className="min-h-screen flex items-center justify-center bg-primary text-primary-foreground py-16 px-4 animate-scale-in animation-delay-200"
+      ref={sectionRef}
+      className="min-h-screen flex items-center justify-center bg-primary text-primary-foreground py-16 px-4 opacity-0" // Initial opacity 0 for GSAP
     >
       <div className="container mx-auto">
-        <div className="text-center mb-12 animate-fade-in-down">
+        <div className="text-center mb-12">
           <h2 className="text-3xl sm:text-4xl font-bold tracking-tight">
             About Me
           </h2>
@@ -25,7 +63,7 @@ const AboutSection: FC = () => {
         </div>
 
         <div className="grid md:grid-cols-2 gap-12 items-center">
-          <div className="flex justify-center md:justify-start animate-fade-in-left animation-delay-200">
+          <div className="flex justify-center md:justify-start">
             <div className="relative w-64 h-64 sm:w-80 sm:h-80 rounded-full overflow-hidden shadow-2xl border-4 border-primary-foreground/20">
               <Image 
                 src="https://placehold.co/400x400.png" 
@@ -38,7 +76,7 @@ const AboutSection: FC = () => {
             </div>
           </div>
           
-          <div className="text-center md:text-left animate-fade-in-right animation-delay-300">
+          <div className="text-center md:text-left">
             <h3 className="text-2xl font-semibold mb-4 text-primary-foreground">{siteConfig.author}</h3>
             <p className="text-primary-foreground/80 leading-relaxed mb-6">
               {siteConfig.professionalSummary}
@@ -70,8 +108,7 @@ const AboutSection: FC = () => {
           ].map((item, index) => (
             <div 
               key={index} 
-              className="bg-secondary p-6 rounded-lg shadow-lg text-center hover:shadow-xl transition-shadow duration-300 animate-fade-in-up"
-              style={{ animationDelay: `${0.4 + index * 0.1}s` }}
+              className="bg-secondary p-6 rounded-lg shadow-lg text-center hover:shadow-xl transition-shadow duration-300"
             >
               <div className="flex justify-center mb-4">{item.icon}</div>
               <h4 className="text-xl font-semibold mb-2 text-secondary-foreground">{item.title}</h4>
