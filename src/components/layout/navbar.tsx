@@ -13,27 +13,36 @@ import type { NavLinkData } from '@/lib/constants';
 const Navbar: FC = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [scrollProgress, setScrollProgress] = useState(0);
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
+      const scrolled = window.scrollY > 20;
+      setIsScrolled(scrolled);
+
+      const totalScrollableHeight = document.documentElement.scrollHeight - window.innerHeight;
+      if (totalScrollableHeight > 0) {
+        const currentProgress = (window.scrollY / totalScrollableHeight) * 100;
+        setScrollProgress(currentProgress);
+      } else {
+        setScrollProgress(0); // No scrollable area or already at the bottom
+      }
     };
     window.addEventListener('scroll', handleScroll);
+    // Call handler once on mount to set initial state
+    handleScroll(); 
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   // Prevents scrolling to a hash (e.g., #about) on homepage initial load/refresh
   useEffect(() => {
     if (window.location.pathname === '/' && window.location.hash) {
-      // Using a timeout to ensure this runs after any default browser scroll restoration
       const timer = setTimeout(() => {
         history.replaceState(null, '', window.location.pathname + window.location.search);
-        // Optional: explicitly scroll to top if clearing hash isn't enough in all cases
-        // window.scrollTo(0, 0); 
       }, 0);
-      return () => clearTimeout(timer); // Cleanup timer on component unmount
+      return () => clearTimeout(timer);
     }
-  }, []); // Empty dependency array ensures this runs once on mount
+  }, []);
 
   const NavLinkItem: FC<{ link: NavLinkData; onClick?: () => void, isMobile?: boolean }> = ({ link, onClick, isMobile }) => (
     <Link href={link.href} passHref legacyBehavior>
@@ -102,6 +111,18 @@ const Navbar: FC = () => {
             </Sheet>
           </div>
         </div>
+      </div>
+      {/* Scroll Progress Bar */}
+      <div className="w-full h-1 bg-transparent"> {/* Container to ensure bar is below main navbar content */}
+        <div 
+          className="h-1 bg-accent transition-all duration-100 ease-linear" 
+          style={{ width: `${scrollProgress}%` }}
+          aria-hidden="true"
+          role="progressbar"
+          aria-valuenow={Math.round(scrollProgress)}
+          aria-valuemin={0}
+          aria-valuemax={100}
+        />
       </div>
     </header>
   );
