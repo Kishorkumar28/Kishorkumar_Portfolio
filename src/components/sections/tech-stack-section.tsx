@@ -1,6 +1,6 @@
 
 import type { FC, ReactElement } from 'react';
-import { Database } from 'lucide-react';
+// Removed: import { Database } from 'lucide-react';
 
 // SVG Icon Components (defined inline for brevity in this example)
 const ReactLogo: FC = () => (
@@ -47,7 +47,9 @@ const MongoDbLogo: FC = () => (
 );
 
 const SqlLogo: FC = () => (
-  <Database className="w-10 h-10 text-blue-600 group-hover:text-blue-500 transition-colors" />
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-10 h-10 text-blue-600 group-hover:text-blue-500 transition-colors">
+    <path d="M12 3C7.03 3 3 4.79 3 7s4.03 4 9 4 9-1.79 9-4-4.03-4-9-4zm0 2c3.86 0 7 1.34 7 3s-3.14 3-7 3-7-1.34-7-3 3.14-3 7-3zm0 7c-4.97 0-9 1.79-9 4s4.03 4 9 4 9-1.79 9-4-4.03-4-9-4zm0 2c3.86 0 7 1.34 7 3s-3.14 3-7 3-7-1.34-7-3 3.14-3 7-3zm0 7c-4.97 0-9 1.79-9 4s4.03 4 9 4 9-1.79 9-4-4.03-4-9-4zm0 2c3.86 0 7 1.34 7 3s-3.14 3-7 3-7-1.34-7-3 3.14-3 7-3z"/>
+  </svg>
 );
 
 
