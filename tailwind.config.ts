@@ -111,6 +111,7 @@ export default {
   },
   plugins: [
     require("tailwindcss-animate"),
+    require('tailwind-scrollbar'), // Added for scrollbar styling
     plugin(function({ addUtilities }: { addUtilities: Function }) {
       const newUtilities = {
         '.animation-delay-100': { 'animation-delay': '0.1s' },
