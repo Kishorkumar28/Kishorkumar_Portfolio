@@ -73,7 +73,7 @@ const TechStackSection: FC = () => {
   return (
     <section 
       id="tech-stack" 
-      className="py-12 md:py-16 bg-secondary text-secondary-foreground animate-fade-in-up animation-delay-200"
+      className="py-12 md:py-16 bg-secondary text-secondary-foreground"
     >
       <div className="container mx-auto px-4">
         <h2 className="text-2xl md:text-3xl font-bold text-center mb-8 md:mb-12 text-primary">
