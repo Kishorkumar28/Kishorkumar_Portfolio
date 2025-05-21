@@ -11,7 +11,7 @@ const AboutSection: FC = () => {
 
   return (
     <section id="about" className="min-h-screen flex items-center justify-center bg-primary text-primary-foreground py-16 px-4">
-      <div className="container mx-auto">
+      <div className="container mx-auto animate-fade-in" style={{ animationDelay: '0.2s', animationFillMode: 'forwards' }}>
         <div className="text-center mb-12">
           <h2 className="text-3xl sm:text-4xl font-bold tracking-tight">
             About Me
