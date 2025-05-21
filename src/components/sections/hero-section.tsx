@@ -7,20 +7,20 @@ import Image from 'next/image';
 
 const HeroSection: FC = () => {
   return (
-    <section id="hero" className="min-h-screen flex items-center justify-center bg-gradient-to-br from-background to-secondary/30 relative overflow-hidden px-4 py-16 pt-32 md:pt-16 animate-fade-in">
+    <section id="hero" className="min-h-screen flex items-center justify-center bg-gradient-to-br from-background to-secondary/30 relative overflow-hidden px-4 py-16 pt-32 md:pt-16">
       <div className="absolute inset-0 opacity-5">
         {/* Subtle background pattern or image can go here */}
       </div>
       <div className="container mx-auto text-center relative z-10">
         <div className="max-w-3xl mx-auto">
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight mb-6">
-            <span className="block">Hello, I&apos;m</span>
-            <span className="block text-primary">{siteConfig.author}</span>
+            <span className="block animate-fade-in-down">Hello, I&apos;m</span>
+            <span className="block text-primary animate-fade-in-down animation-delay-100">{siteConfig.author}</span>
           </h1>
-          <p className="text-lg sm:text-xl text-muted-foreground mb-8" >
+          <p className="text-lg sm:text-xl text-muted-foreground mb-8 animate-fade-in-up animation-delay-200" >
             A Full-Stack Developer crafting seamless digital experiences with the MERN stack and modern web technologies.
           </p>
-          <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
+          <div className="flex flex-col sm:flex-row justify-center items-center gap-4 animate-fade-in-up animation-delay-300">
             <Button asChild size="lg" className="shadow-lg hover:shadow-xl transition-shadow duration-300">
               <Link href="/projects">
                 <Briefcase className="mr-2 h-5 w-5" />

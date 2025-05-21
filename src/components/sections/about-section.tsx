@@ -10,9 +10,9 @@ const AboutSection: FC = () => {
   const mainSkills = skills.filter(skill => ['React', 'Node.js', 'MongoDB', 'Express.js', 'Next.js'].includes(skill.name)).slice(0, 5);
 
   return (
-    <section id="about" className="min-h-screen flex items-center justify-center bg-primary text-primary-foreground py-16 px-4 animate-fade-in-up">
+    <section id="about" className="min-h-screen flex items-center justify-center bg-primary text-primary-foreground py-16 px-4">
       <div className="container mx-auto">
-        <div className="text-center mb-12">
+        <div className="text-center mb-12 animate-fade-in-down">
           <h2 className="text-3xl sm:text-4xl font-bold tracking-tight">
             About Me
           </h2>
@@ -22,7 +22,7 @@ const AboutSection: FC = () => {
         </div>
 
         <div className="grid md:grid-cols-2 gap-12 items-center">
-          <div className="flex justify-center md:justify-start">
+          <div className="flex justify-center md:justify-start animate-fade-in-left animation-delay-200">
             <div className="relative w-64 h-64 sm:w-80 sm:h-80 rounded-full overflow-hidden shadow-2xl border-4 border-primary-foreground/20">
               <Image 
                 src="https://placehold.co/400x400.png" 
@@ -35,7 +35,7 @@ const AboutSection: FC = () => {
             </div>
           </div>
           
-          <div className="text-center md:text-left">
+          <div className="text-center md:text-left animate-fade-in-right animation-delay-300">
             <h3 className="text-2xl font-semibold mb-4 text-primary-foreground">{siteConfig.author}</h3>
             <p className="text-primary-foreground/80 leading-relaxed mb-6">
               {siteConfig.professionalSummary}
@@ -67,7 +67,8 @@ const AboutSection: FC = () => {
           ].map((item, index) => (
             <div 
               key={index} 
-              className="bg-secondary p-6 rounded-lg shadow-lg text-center hover:shadow-xl transition-shadow duration-300"
+              className="bg-secondary p-6 rounded-lg shadow-lg text-center hover:shadow-xl transition-shadow duration-300 animate-fade-in-up"
+              style={{ animationDelay: `${0.4 + index * 0.1}s` }}
             >
               <div className="flex justify-center mb-4">{item.icon}</div>
               <h4 className="text-xl font-semibold mb-2 text-secondary-foreground">{item.title}</h4>
