@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 const plugin = require('tailwindcss/plugin');
 
@@ -90,6 +91,10 @@ export default {
         'fade-in-left': { '0%': { opacity: '0', transform: 'translateX(20px)' }, '100%': { opacity: '1', transform: 'translateX(0)' } },
         'fade-in-right': { '0%': { opacity: '0', transform: 'translateX(-20px)' }, '100%': { opacity: '1', transform: 'translateX(0)' } },
         'scale-in': { '0%': { opacity: '0', transform: 'scale(0.95)' }, '100%': { opacity: '1', transform: 'scale(1)' } },
+        'scroll-left': {
+          '0%': { transform: 'translateX(0)' },
+          '100%': { transform: 'translateX(-50%)' }, // Moves half the total width (one set of items)
+        },
   		},
   		animation: {
   			'accordion-down': 'accordion-down 0.2s ease-out',
@@ -100,6 +105,7 @@ export default {
         'fade-in-left': 'fade-in-left 0.6s ease-out forwards',
         'fade-in-right': 'fade-in-right 0.6s ease-out forwards',
         'scale-in': 'scale-in 0.6s ease-out forwards',
+        'scroll-left': 'scroll-left 40s linear infinite', // Adjust duration for speed
   		}
   	}
   },
@@ -117,8 +123,10 @@ export default {
         '.animation-delay-800': { 'animation-delay': '0.8s' },
         '.animation-delay-900': { 'animation-delay': '0.9s' },
         '.animation-delay-1000': { 'animation-delay': '1s' },
+        '.animation-pause': { 'animation-play-state': 'paused' },
       }
-      addUtilities(newUtilities, ['responsive', 'hover'])
+      addUtilities(newUtilities, ['responsive', 'hover', 'group-hover'])
     })
   ],
 } satisfies Config;
+
