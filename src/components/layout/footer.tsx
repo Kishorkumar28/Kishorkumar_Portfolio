@@ -1,6 +1,6 @@
 import type { FC } from 'react';
 import { siteConfig } from '@/lib/constants';
-import { Github, Linkedin, Twitter } from 'lucide-react';
+import { Github, Linkedin } from 'lucide-react';
 
 const Footer: FC = () => {
   return (
@@ -12,9 +12,6 @@ const Footer: FC = () => {
           </a>
           <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="text-secondary-foreground hover:text-accent transition-colors">
             <Linkedin className="h-6 w-6" />
-          </a>
-          <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter" className="text-secondary-foreground hover:text-accent transition-colors">
-            <Twitter className="h-6 w-6" />
           </a>
         </div>
         <p className="text-sm">
