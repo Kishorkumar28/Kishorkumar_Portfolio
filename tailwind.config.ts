@@ -105,7 +105,7 @@ export default {
         'fade-in-left': 'fade-in-left 0.6s ease-out forwards',
         'fade-in-right': 'fade-in-right 0.6s ease-out forwards',
         'scale-in': 'scale-in 0.6s ease-out forwards',
-        'scroll-left': 'scroll-left 40s linear infinite', // Adjust duration for speed
+        'scroll-left': 'scroll-left 25s linear infinite', // Adjusted duration for speed
   		}
   	}
   },
@@ -129,4 +129,3 @@ export default {
     })
   ],
 } satisfies Config;
-
