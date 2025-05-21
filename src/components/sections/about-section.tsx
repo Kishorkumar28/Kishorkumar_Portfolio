@@ -11,8 +11,8 @@ const AboutSection: FC = () => {
 
   return (
     <section id="about" className="min-h-screen flex items-center justify-center bg-primary text-primary-foreground py-16 px-4">
-      <div className="container mx-auto animate-fade-in" style={{ animationDelay: '0.2s', animationFillMode: 'forwards' }}>
-        <div className="text-center mb-12">
+      <div className="container mx-auto">
+        <div className="text-center mb-12 animate-fade-in-up" style={{ animationDelay: '0.2s', animationFillMode: 'forwards' }}>
           <h2 className="text-3xl sm:text-4xl font-bold tracking-tight">
             About Me
           </h2>
@@ -22,7 +22,7 @@ const AboutSection: FC = () => {
         </div>
 
         <div className="grid md:grid-cols-2 gap-12 items-center">
-          <div className="flex justify-center md:justify-start">
+          <div className="flex justify-center md:justify-start animate-scale-in" style={{ animationDelay: '0.4s', animationFillMode: 'forwards' }}>
             <div className="relative w-64 h-64 sm:w-80 sm:h-80 rounded-full overflow-hidden shadow-2xl border-4 border-primary-foreground/20">
               <Image 
                 src="https://placehold.co/400x400.png" 
@@ -35,7 +35,7 @@ const AboutSection: FC = () => {
             </div>
           </div>
           
-          <div className="text-center md:text-left">
+          <div className="text-center md:text-left animate-fade-in-right" style={{ animationDelay: '0.6s', animationFillMode: 'forwards' }}>
             <h3 className="text-2xl font-semibold mb-4 text-primary-foreground">{siteConfig.author}</h3>
             <p className="text-primary-foreground/80 leading-relaxed mb-6">
               {siteConfig.professionalSummary}
@@ -65,7 +65,11 @@ const AboutSection: FC = () => {
             { icon: <Code className="h-8 w-8 text-accent" />, title: "MERN Expert", text: "Full-Stack Proficiency" },
             { icon: <Users className="h-8 w-8 text-accent" />, title: "Team Player", text: "Collaborative & Communicative" },
           ].map((item, index) => (
-            <div key={index} className="bg-secondary p-6 rounded-lg shadow-lg text-center hover:shadow-xl transition-shadow duration-300">
+            <div 
+              key={index} 
+              className="bg-secondary p-6 rounded-lg shadow-lg text-center hover:shadow-xl transition-shadow duration-300 animate-fade-in-up"
+              style={{ animationDelay: `${0.8 + index * 0.2}s`, animationFillMode: 'forwards' }}
+            >
               <div className="flex justify-center mb-4">{item.icon}</div>
               <h4 className="text-xl font-semibold mb-2 text-secondary-foreground">{item.title}</h4>
               <p className="text-sm text-muted-foreground">{item.text.replace("X+", "X") /* Replace X with actual years if needed */}</p>
