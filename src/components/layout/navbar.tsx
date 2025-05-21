@@ -27,7 +27,7 @@ const Navbar: FC = () => {
       <a
         onClick={onClick}
         className={`
-          px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300
+          px-3 py-2 rounded-md text-base font-medium transition-colors duration-300
           ${isMobile ? 'block w-full text-left hover:bg-accent hover:text-accent-foreground' : 'hover:text-accent focus:text-accent focus:outline-none focus:ring-2 focus:ring-accent/50'}
         `}
       >
@@ -37,7 +37,7 @@ const Navbar: FC = () => {
   );
   
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-background/80 backdrop-blur-md shadow-md' : 'bg-transparent'}`}>
+    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-background/95 backdrop-blur-md shadow-md' : 'bg-transparent'}`}>
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center">
