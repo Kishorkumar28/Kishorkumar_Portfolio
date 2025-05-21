@@ -1,10 +1,11 @@
+
 import type { FC } from 'react';
 import Image from 'next/image';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import type { ProjectData } from '@/lib/constants';
-import { ArrowRight, Github, ExternalLink } from 'lucide-react';
+import { ArrowRight, Github, ExternalLink, Eye } from 'lucide-react';
 
 interface ProjectCardProps {
   project: ProjectData;
@@ -13,8 +14,8 @@ interface ProjectCardProps {
 
 const ProjectCard: FC<ProjectCardProps> = ({ project, onViewDetails }) => {
   return (
-    <Card className="flex flex-col h-full overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 rounded-xl">
-      <CardHeader className="p-0">
+    <Card className="group flex flex-col h-full overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 rounded-xl">
+      <CardHeader className="p-0 relative">
         <div className="aspect-video relative w-full overflow-hidden">
           <Image
             src={project.imageUrl}
@@ -24,6 +25,12 @@ const ProjectCard: FC<ProjectCardProps> = ({ project, onViewDetails }) => {
             className="transition-transform duration-500 group-hover:scale-105"
             data-ai-hint={project.dataAiHint}
           />
+          <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+            <div className="text-center">
+              <Eye className="h-12 w-12 text-white/80 mb-2 mx-auto" />
+              <p className="text-white font-semibold">View Details</p>
+            </div>
+          </div>
         </div>
       </CardHeader>
       <CardContent className="p-6 flex-grow">
@@ -75,3 +82,5 @@ const ProjectCard: FC<ProjectCardProps> = ({ project, onViewDetails }) => {
 };
 
 export default ProjectCard;
+
+    
