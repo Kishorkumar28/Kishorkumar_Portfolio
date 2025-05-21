@@ -10,7 +10,10 @@ const AboutSection: FC = () => {
   const mainSkills = skills.filter(skill => ['React', 'Node.js', 'MongoDB', 'Express.js', 'Next.js'].includes(skill.name)).slice(0, 5);
 
   return (
-    <section id="about" className="min-h-screen flex items-center justify-center bg-primary text-primary-foreground py-16 px-4">
+    <section 
+      id="about" 
+      className="min-h-screen flex items-center justify-center bg-primary text-primary-foreground py-16 px-4 animate-scale-in animation-delay-200"
+    >
       <div className="container mx-auto">
         <div className="text-center mb-12 animate-fade-in-down">
           <h2 className="text-3xl sm:text-4xl font-bold tracking-tight">
