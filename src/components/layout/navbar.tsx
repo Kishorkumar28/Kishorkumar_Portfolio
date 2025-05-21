@@ -22,6 +22,19 @@ const Navbar: FC = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Prevents scrolling to a hash (e.g., #about) on homepage initial load/refresh
+  useEffect(() => {
+    if (window.location.pathname === '/' && window.location.hash) {
+      // Using a timeout to ensure this runs after any default browser scroll restoration
+      const timer = setTimeout(() => {
+        history.replaceState(null, '', window.location.pathname + window.location.search);
+        // Optional: explicitly scroll to top if clearing hash isn't enough in all cases
+        // window.scrollTo(0, 0); 
+      }, 0);
+      return () => clearTimeout(timer); // Cleanup timer on component unmount
+    }
+  }, []); // Empty dependency array ensures this runs once on mount
+
   const NavLinkItem: FC<{ link: NavLinkData; onClick?: () => void, isMobile?: boolean }> = ({ link, onClick, isMobile }) => (
     <Link href={link.href} passHref legacyBehavior>
       <a
