@@ -45,7 +45,7 @@ const CssLogo: FC<SVGProps<SVGSVGElement>> = (props) => (
   </svg>
 );
 
-const MongoDBLogo: FC<SVGProps<SVGSVGElement>> = (props) => (
+const MongoDbLogo: FC<SVGProps<SVGSVGElement>> = (props) => (
   <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
     <path d="M15.373 6.099C15.063 4.418 13.74 3.168 12.002 3.168C10.448 3.168 9.231 4.193 8.808 5.661C6.699 5.868 5.135 7.503 5.135 9.606C5.135 10.593 5.468 11.486 6.044 12.186C4.469 12.618 3.601 13.807 3.601 15.156C3.601 16.732 4.833 17.949 6.439 17.949H10.06C10.06 17.949 10.06 20.832 12.002 20.832C13.932 20.832 13.932 17.949 13.932 17.949H17.573C19.168 17.949 20.4 16.722 20.4 15.156C20.4 13.807 19.532 12.618 17.957 12.186C18.532 11.486 18.865 10.593 18.865 9.606C18.865 7.503 17.301 5.868 15.192 5.661L15.372 6.099H15.373Z" fill="#4DB33D"></path>
     <path d="M12.0019 3.168C13.74 3.168 15.063 4.418 15.373 6.099L15.192 5.661C17.301 5.868 18.865 7.503 18.865 9.606C18.865 10.593 18.532 11.486 17.957 12.186C19.532 12.618 20.4 13.807 20.4 15.156C20.4 16.722 19.168 17.949 17.573 17.949H13.932C13.932 17.949 13.932 20.832 12.0019 20.832V3.168Z" fill="#3FA037"></path>
@@ -81,7 +81,7 @@ const techStackItems: TechItem[] = [
   { name: 'JavaScript', icon: <JavaScriptLogo className="w-10 h-10 group-hover:opacity-90 transition-opacity" /> },
   { name: 'HTML5', icon: <HtmlLogo className="w-10 h-10 group-hover:opacity-90 transition-opacity" /> },
   { name: 'CSS3', icon: <CssLogo className="w-10 h-10 group-hover:opacity-90 transition-opacity" /> },
-  { name: 'MongoDB', icon: <MongoDBLogo className="w-10 h-10 group-hover:opacity-90 transition-opacity" /> },
+  { name: 'MongoDB', icon: <MongoDbLogo className="w-10 h-10 group-hover:opacity-90 transition-opacity" /> },
   { name: 'SQL', icon: <SqlLogo className="w-10 h-10 text-blue-600 group-hover:text-blue-500 transition-colors" /> },
   { name: 'Node.js', icon: <NodeJsLogo className="w-10 h-10 text-green-500 group-hover:text-green-400 transition-colors" /> },
   { name: 'Tailwind CSS', icon: <TailwindCssLogo className="w-10 h-10 text-teal-500 group-hover:text-teal-400 transition-colors" /> },
@@ -100,9 +100,9 @@ const TechStackSection: FC = () => {
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: el,
-          start: "top 85%", 
-          end: "top 35%",   
-          scrub: 1,         
+          start: "top 85%",
+          end: "top 35%",
+          scrub: 1,
         }
       });
 
@@ -110,15 +110,15 @@ const TechStackSection: FC = () => {
         { scale: 0.8, opacity: 0 },
         { scale: 1, opacity: 1, ease: "power2.inOut", duration: 1 }
       );
-      
+
       if (titleEl) {
         tl.fromTo(titleEl,
           { opacity: 0, y: 20 },
           { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" },
-          ">-0.7" 
+          ">-0.7"
         );
       }
-      
+
       techItemsRef.current.forEach((item, index) => {
         if (item) {
           gsap.fromTo(item,
@@ -127,10 +127,10 @@ const TechStackSection: FC = () => {
               opacity: 1, y: 0, scale: 1, duration: 0.4, ease: "power1.out",
               scrollTrigger: {
                 trigger: item,
-                start: "top 90%", 
-                toggleActions: "play none none none", 
+                start: "top 90%",
+                toggleActions: "play none none none",
               },
-              delay: index * 0.05 + 0.3 
+              delay: index * 0.05 + 0.3
             }
           );
         }
@@ -156,14 +156,14 @@ const TechStackSection: FC = () => {
   }, []);
 
   return (
-    <section 
-      id="tech-stack" 
+    <section
+      id="tech-stack"
       ref={sectionRef}
       className="py-12 md:py-16 bg-secondary text-secondary-foreground opacity-0" // Initial opacity 0 for GSAP
     >
       <div className="container mx-auto px-4">
-        <h2 
-          ref={titleRef} 
+        <h2
+          ref={titleRef}
           className="text-2xl md:text-3xl font-bold text-center mb-8 md:mb-12 text-primary opacity-0" // Initial opacity 0 for GSAP
         >
           My Tech Arsenal
@@ -171,9 +171,9 @@ const TechStackSection: FC = () => {
         {techStackItems.length > 0 ? (
           <div className="relative w-full overflow-x-hidden overflow-y-hidden group"> {/* Added overflow-y-hidden here */}
             <div className="flex animate-scroll-left group-hover:animation-pause">
-              {[...techStackItems, ...techStackItems].map((item, index) => ( 
-                <div 
-                  key={`${item.name}-${index}`} 
+              {[...techStackItems, ...techStackItems].map((item, index) => (
+                <div
+                  key={`${item.name}-${index}`}
                   ref={el => techItemsRef.current[index] = el}
                   className="group flex-shrink-0 flex flex-col items-center justify-center p-4 mx-3 sm:mx-4 w-32 h-36 sm:w-36 sm:h-40 bg-card rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1"
                 >
@@ -194,5 +194,3 @@ const TechStackSection: FC = () => {
 };
 
 export default TechStackSection;
-
-    
