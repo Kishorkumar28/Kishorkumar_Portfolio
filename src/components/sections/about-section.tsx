@@ -10,6 +10,7 @@ import Link from 'next/link';
 import { siteConfig, skills } from '@/lib/constants';
 import { Award, Brain, Code, Users, BookOpen } from 'lucide-react';
 import Image from 'next/image';
+import ProfileImageFile from '../../images/memoji.jpg'; // Import the image
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -23,9 +24,9 @@ const AboutSection: FC = () => {
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: el,
-          start: "top 85%", 
-          end: "top 35%",   
-          scrub: 1,         
+          start: "top 85%",
+          end: "top 35%",
+          scrub: 1,
         }
       });
 
@@ -35,14 +36,14 @@ const AboutSection: FC = () => {
       );
 
       const childElements = el.querySelectorAll('.animate-gsap-child');
-      childElements.forEach((child) => { 
+      childElements.forEach((child) => {
         tl.fromTo(child,
           { opacity: 0, y: 20 },
           { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" },
-          ">-0.3" 
+          ">-0.3"
         );
       });
-      
+
       const infoCards = el.querySelectorAll('.info-card-animate');
       infoCards.forEach((card, index) => {
         gsap.fromTo(card,
@@ -55,10 +56,10 @@ const AboutSection: FC = () => {
             ease: "power2.out",
             scrollTrigger: {
               trigger: card,
-              start: "top 90%", 
-              toggleActions: "play none none none", 
+              start: "top 90%",
+              toggleActions: "play none none none",
             },
-            delay: index * 0.1 
+            delay: index * 0.1
           }
         );
       });
@@ -83,7 +84,7 @@ const AboutSection: FC = () => {
     >
       <div className="container mx-auto">
         <div className="text-center mb-12 animate-gsap-child">
-          <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-primary"> {/* Changed text color for visibility */}
+          <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-primary">
             About Me
           </h2>
           <p className="mt-4 text-lg text-secondary-foreground/80 max-w-2xl mx-auto">
@@ -92,14 +93,15 @@ const AboutSection: FC = () => {
         </div>
 
         <div className="grid md:grid-cols-2 gap-12 items-center">
-          <div className="flex justify-center md:justify-start"> 
+          <div className="flex justify-center md:justify-start">
             <div className="relative w-64 h-64 sm:w-80 sm:h-80 rounded-full overflow-hidden shadow-2xl border-4 border-secondary-foreground/20">
               <Image
-                src="/memoji-kishorkumar.png"
-                alt="Profile picture" 
+                src={ProfileImageFile}
+                alt={`${siteConfig.author} - Memoji`}
                 data-ai-hint="memoji avatar"
                 layout="fill"
                 objectFit="cover"
+                placeholder="blur"
                 className="transform hover:scale-105 transition-transform duration-500"
               />
             </div>
@@ -110,7 +112,7 @@ const AboutSection: FC = () => {
             <p className="text-secondary-foreground/80 leading-relaxed mb-6">
               {siteConfig.professionalSummary}
             </p>
-            
+
             <div className="mb-6">
               <h4 className="text-lg font-medium mb-2 text-secondary-foreground/90 flex items-center justify-center md:justify-start">
                 <BookOpen className="mr-2 h-5 w-5 text-accent" />
@@ -150,7 +152,7 @@ const AboutSection: FC = () => {
           ].map((item, index) => (
             <div
               key={index}
-              className="info-card-animate bg-card p-6 rounded-lg shadow-lg text-center hover:shadow-xl transition-shadow duration-300" 
+              className="info-card-animate bg-card p-6 rounded-lg shadow-lg text-center hover:shadow-xl transition-shadow duration-300"
             >
               <div className="flex justify-center mb-4">{item.icon}</div>
               <h4 className="text-xl font-semibold mb-2 text-card-foreground">{item.title}</h4>
@@ -165,4 +167,3 @@ const AboutSection: FC = () => {
 };
 
 export default AboutSection;
-
