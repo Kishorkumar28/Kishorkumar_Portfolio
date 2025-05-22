@@ -24,19 +24,18 @@ export interface SkillData {
 
 export const skills: SkillData[] = [
   // MERN Stack
-  { id: 'react', name: 'React', level: 90, category: 'Frontend' },
-  { id: 'nodejs', name: 'Node.js', level: 85, category: 'Backend' },
-  { id: 'expressjs', name: 'Express.js', level: 85, category: 'Backend' },
-  { id: 'mongodb', name: 'MongoDB', level: 80, category: 'Database' },
+  { id: 'react', name: 'React', level: 80, category: 'Frontend' },
+  { id: 'nodejs', name: 'Node.js', level: 75, category: 'Backend' },
+  { id: 'expressjs', name: 'Express.js', level: 75, category: 'Backend' },
+  { id: 'mongodb', name: 'MongoDB', level: 60, category: 'Database' },
   // Other Full-Stack Skills
-  { id: 'javascript', name: 'JavaScript (ES6+)', level: 95, category: 'Languages' },
+  { id: 'javascript', name: 'JavaScript (ES6+)', level: 80, category: 'Languages' },
   { id: 'typescript', name: 'TypeScript', level: 80, category: 'Languages' },
   { id: 'html5', name: 'HTML5', level: 95, category: 'Frontend' },
   { id: 'css3', name: 'CSS3', level: 90, category: 'Frontend' },
-  { id: 'tailwindcss', name: 'Tailwind CSS', level: 90, category: 'Frontend' },
+  { id: 'tailwindcss', name: 'Tailwind CSS', level: 70, category: 'Frontend' },
   { id: 'git', name: 'Git & GitHub', level: 85, category: 'Tools' },
   { id: 'restapi', name: 'RESTful APIs', level: 90, category: 'Backend' },
-  { id: 'docker', name: 'Docker', level: 70, category: 'Tools' },
   { id: 'nextjs', name: 'Next.js', level: 80, category: 'Frontend' },
 ];
 
