@@ -89,7 +89,7 @@ export const projects: ProjectData[] = [
 ];
 
 export const siteConfig = {
-  name: "EtherealFolio",
+  name: "Portfolio",
   title: "EtherealFolio - Full-Stack Developer",
   description: "Portfolio of a Full-Stack Developer specializing in MERN stack and modern web technologies.",
   author: "Kishorkumar K.",
