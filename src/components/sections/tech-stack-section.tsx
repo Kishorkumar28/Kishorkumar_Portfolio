@@ -1,6 +1,12 @@
 
+"use client";
+
 import type { FC, ReactElement } from 'react';
-// Removed: import { Database } from 'lucide-react';
+import { useEffect, useRef } from 'react';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
 
 // SVG Icon Components (defined inline for brevity in this example)
 const ReactLogo: FC = () => (
@@ -70,13 +76,54 @@ const techStackItems: TechItem[] = [
 ];
 
 const TechStackSection: FC = () => {
+  const sectionRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const el = sectionRef.current;
+    if (el) {
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: el,
+          start: "top 85%", // When the top of the section is 85% from the top of the viewport
+          end: "top 35%",   // End the animation when the top of the section is 35% from the top
+          scrub: 1,         // Smooth scrubbing effect
+        }
+      });
+
+      tl.fromTo(el,
+        { scale: 0.8, opacity: 0 },
+        { scale: 1, opacity: 1, ease: "power2.inOut", duration: 1 }
+      );
+      
+      // Animate child elements like title if needed
+      const childTitle = el.querySelector('.animate-gsap-child-title');
+      if (childTitle) {
+        tl.fromTo(childTitle,
+          { opacity: 0, y: 20 },
+          { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" },
+          ">-0.3" // Stagger start time
+        );
+      }
+
+      return () => {
+        tl.kill();
+        ScrollTrigger.getAll().forEach(instance => {
+          if (instance.trigger === el || (childTitle && instance.trigger === childTitle)) {
+            instance.kill();
+          }
+        });
+      };
+    }
+  }, []);
+
   return (
     <section 
       id="tech-stack" 
-      className="py-12 md:py-16 bg-secondary text-secondary-foreground"
+      ref={sectionRef}
+      className="py-12 md:py-16 bg-secondary text-secondary-foreground opacity-0" // Initial opacity for GSAP
     >
       <div className="container mx-auto px-4">
-        <h2 className="text-2xl md:text-3xl font-bold text-center mb-8 md:mb-12 text-primary">
+        <h2 className="text-2xl md:text-3xl font-bold text-center mb-8 md:mb-12 text-primary animate-gsap-child-title">
           My Tech Arsenal
         </h2>
         <div className="relative w-full overflow-x-hidden group">
