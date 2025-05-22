@@ -18,12 +18,13 @@ const getCategoryIcon = (category: SkillData['category']) => {
 
 const SkillsPage: NextPage = () => {
   const categorizedSkills: Record<string, SkillData[]> = skills.reduce((acc, skill) => {
-    (acc[skill.category] = acc[skill.category] || []).push(skill);
+    if (skill && skill.category) { // Ensure skill and category exist
+      (acc[skill.category] = acc[skill.category] || []).push(skill);
+    }
     return acc;
   }, {} as Record<string, SkillData[]>);
 
   const categoryOrder: SkillData['category'][] = ['Languages', 'Frontend', 'Backend', 'Database', 'Tools'];
-
 
   return (
     <div className="min-h-screen bg-background py-16 px-4">
@@ -50,15 +51,26 @@ const SkillsPage: NextPage = () => {
                 </CardHeader>
                 <CardContent>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6">
-                    {currentSkills.map((skill) => (
-                      <div key={skill.id} className="space-y-1.5">
-                        <div className="flex justify-between items-center">
-                          <h3 className="text-md font-medium text-foreground">{skill.name}</h3>
-                          {/* Percentage text removed from here */}
+                    {currentSkills.map((skill) => {
+                      // Defensive check for essential skill properties
+                      if (!skill || typeof skill.id !== 'string' || typeof skill.name !== 'string') {
+                        return null; 
+                      }
+                      const skillLevel = typeof skill.level === 'number' ? skill.level : 0;
+
+                      return (
+                        <div key={skill.id} className="space-y-1.5">
+                          <div className="flex justify-between items-center">
+                            <h3 className="text-md font-medium text-foreground">{skill.name}</h3>
+                          </div>
+                          <Progress 
+                            value={skillLevel} 
+                            aria-label={`${skill.name} proficiency: ${skillLevel}%`} 
+                            className="h-3 [&>div]:bg-accent" 
+                          />
                         </div>
-                        <Progress value={skill.level} aria-label={`${skill.name} proficiency: ${skill.level}%`} className="h-3 [&>div]:bg-accent" />
-                      </div>
-                    ))}
+                      );
+                    })}
                   </div>
                 </CardContent>
               </Card>

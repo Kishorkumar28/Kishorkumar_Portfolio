@@ -95,4 +95,3 @@ export const siteConfig = {
   author: "Kishorkumar K.",
   professionalSummary: "Creative and detail-oriented Full Stack Developer with strong proficiency in the MERN stack, including React.js, Node.js, and MongoDB. Experienced in building responsive and dynamic web applications, including a full-featured Airbnb clone. Passionate about clean UI/UX, efficient code, and solving real-world problems through technology. Seeking to contribute to forward-thinking development teams in a full stack or specialized front-/back- end role",
 };
-
