@@ -8,7 +8,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { siteConfig, skills } from '@/lib/constants';
-import { Award, Brain, Code, Users } from 'lucide-react';
+import { Award, Brain, Code, Users, BookOpen } from 'lucide-react'; // Added BookOpen for education
 import Image from 'next/image';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -36,7 +36,7 @@ const AboutSection: FC = () => {
 
       // Animate direct children text elements and image container for a layered effect, after the main section reveal
       const childElements = el.querySelectorAll('.animate-gsap-child');
-      childElements.forEach((child, index) => {
+      childElements.forEach((child) => { // Removed index as it's not used in this simplified staggering
         tl.fromTo(child,
           { opacity: 0, y: 20 },
           { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" },
@@ -111,6 +111,17 @@ const AboutSection: FC = () => {
             <p className="text-secondary-foreground/80 leading-relaxed mb-6">
               {siteConfig.professionalSummary}
             </p>
+            
+            <div className="mb-6">
+              <h4 className="text-lg font-medium mb-2 text-secondary-foreground/90 flex items-center justify-center md:justify-start">
+                <BookOpen className="mr-2 h-5 w-5 text-accent" />
+                Highest Level of Education
+              </h4>
+              <p className="text-secondary-foreground/80">SASTRA Deemed to be University, Tamilnadu</p>
+              <p className="text-secondary-foreground/70 text-sm">Bachelor of Technology, Computer Science and Engineering</p>
+              <p className="text-secondary-foreground/70 text-sm">2020 - 2024</p>
+            </div>
+
             <div className="mb-6">
               <h4 className="text-lg font-medium mb-3 text-secondary-foreground/90">Core Proficiencies:</h4>
               <div className="flex flex-wrap gap-2 justify-center md:justify-start">
@@ -155,3 +166,4 @@ const AboutSection: FC = () => {
 };
 
 export default AboutSection;
+
