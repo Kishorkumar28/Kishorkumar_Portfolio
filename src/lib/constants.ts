@@ -56,6 +56,17 @@ export interface ProjectData {
 
 export const projects: ProjectData[] = [
   {
+    id: 'project-airbnb-clone',
+    title: 'Airbnb Clone',
+    description: 'A full-stack clone of Airbnb, demonstrating key booking, listing, and user management features using the MERN stack.',
+    longDescription: "This project is a comprehensive full-stack clone of the popular Airbnb platform, developed using the MERN stack (MongoDB, Express.js, React, Node.js). It aims to replicate core functionalities such as user registration and authentication, property listings with detailed descriptions and images, searching and filtering properties, booking management, and user profiles. The frontend is built with React, leveraging its component-based architecture for a dynamic and responsive user interface. The backend, powered by Node.js and Express.js, provides robust RESTful APIs for data handling and business logic, with MongoDB serving as the database. This project showcases skills in full-stack development, API design, and user interface implementation.",
+    imageUrl: 'https://placehold.co/600x400.png',
+    dataAiHint: 'airbnb clone',
+    technologies: ['React', 'HTML', 'CSS', 'JavaScript', 'MongoDB', 'Node.js', 'Express.js'],
+    liveLink: 'https://projecthotelbookingbykishor.netlify.app/',
+    // repoLink: '#', // Add if available
+  },
+  {
     id: 'project-1',
     title: 'MERN TaskMaster',
     description: 'A full-stack task management application with user authentication and real-time updates.',
