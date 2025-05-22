@@ -1,4 +1,4 @@
-# **App Name**: EtherealFolio
+# **App Name**: Portfolio
 
 ## Core Features:
 
