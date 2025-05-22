@@ -8,101 +8,101 @@
     @apply scroll-smooth;
   }
   :root {
-    /* Primary Gaming Theme: Dark with Cool Accents (Teal/Magenta) */
-    --background: 220 15% 10%; /* Very Dark Blue/Grey */
-    --foreground: 220 10% 88%; /* Light Grey */
+    /* Black and Blue Theme */
+    --background: 220 10% 5%; /* Very Dark Blue/Almost Black */
+    --foreground: 210 25% 90%; /* Light Bluish Grey */
 
-    --card: 220 15% 15%; /* Darker Card Background */
-    --card-foreground: 220 10% 88%;
+    --card: 220 10% 10%; /* Dark Blue Card Background */
+    --card-foreground: 210 25% 90%;
 
-    --popover: 220 15% 12%; /* Slightly Darker Popover */
-    --popover-foreground: 220 10% 88%;
+    --popover: 220 10% 8%; /* Slightly Darker Popover */
+    --popover-foreground: 210 25% 90%;
 
-    --primary: 180 70% 50%; /* Vibrant Teal */
-    --primary-foreground: 220 15% 5%; /* Dark text for Teal buttons */
+    --primary: 210 90% 55%; /* Bright Vibrant Blue */
+    --primary-foreground: 210 100% 98%; /* Very Light Blue/White for text on primary */
 
-    --secondary: 180 50% 30%; /* Muted Teal/Darker Blue-Grey */
-    --secondary-foreground: 220 10% 80%; /* Lighter text for secondary */
+    --secondary: 220 40% 25%; /* Muted Dark Blue */
+    --secondary-foreground: 210 30% 80%; /* Lighter blue text for secondary */
 
-    --muted: 220 10% 25%; /* Darker Grey for muted elements */
-    --muted-foreground: 220 5% 55%; /* Medium Grey for muted text */
+    --muted: 220 10% 18%; /* Darker Grey-Blue for muted elements */
+    --muted-foreground: 210 15% 60%; /* Medium Grey-Blue for muted text */
 
-    --accent: 330 80% 60%; /* Vibrant Magenta/Hot Pink */
-    --accent-foreground: 0 0% 100%; /* White text on accent */
+    --accent: 195 90% 60%; /* Electric Light Blue/Cyan */
+    --accent-foreground: 220 15% 10%; /* Dark blue/black text on accent */
 
-    --destructive: 0 80% 55%; /* Bright Red */
-    --destructive-foreground: 0 0% 98%;
+    --destructive: 220 50% 40%; /* Deep Blue for destructive (non-red) */
+    --destructive-foreground: 210 25% 90%;
 
-    --border: 220 15% 20%; /* Subtle Dark Border */
-    --input: 220 15% 18%; /* Dark Input Background */
-    --ring: 180 70% 50%; /* Teal for focus rings */
+    --border: 220 15% 20%; /* Subtle Dark Blue Border */
+    --input: 220 10% 12%; /* Dark Blue Input Background */
+    --ring: 210 90% 55%; /* Bright Blue for focus rings */
 
     --radius: 0.5rem;
 
-    /* Sidebar specific colors - aligned with Teal/Magenta theme */
-    --sidebar-background: 220 15% 8%; /* Even darker for sidebar */
-    --sidebar-foreground: 220 10% 85%;
-    --sidebar-primary: 180 70% 50%;    /* Teal for active/primary items */
-    --sidebar-primary-foreground: 220 15% 5%; /* Dark text on Teal */
-    --sidebar-accent: 220 15% 20%;      /* Dark hover for sidebar items */
-    --sidebar-accent-foreground: 220 10% 90%; /* Light text for hover */
-    --sidebar-border: 220 15% 18%;
-    --sidebar-ring: 180 70% 50%; /* Teal for ring */
+    /* Sidebar specific colors - Black and Blue */
+    --sidebar-background: 220 10% 3%; /* Even darker for sidebar */
+    --sidebar-foreground: 210 20% 85%;
+    --sidebar-primary: 195 90% 60%;    /* Accent Blue for active/primary items */
+    --sidebar-primary-foreground: 220 15% 10%; /* Dark text on Accent Blue */
+    --sidebar-accent: 220 15% 15%;      /* Dark blue hover for sidebar items */
+    --sidebar-accent-foreground: 210 25% 90%; /* Light blue text for hover */
+    --sidebar-border: 220 10% 9%;
+    --sidebar-ring: 195 90% 60%; /* Accent Blue for ring */
 
-    /* Chart colors for Teal/Magenta theme */
-    --chart-1: 180 70% 50%; /* Teal */
-    --chart-2: 330 80% 60%; /* Magenta */
-    --chart-3: 270 70% 60%; /* Purple */
-    --chart-4: 210 80% 65%; /* Bright Blue */
-    --chart-5: 60 80% 55%;  /* Bright Yellow */
+    /* Chart colors for Black and Blue theme */
+    --chart-1: 210 90% 55%; /* Primary Blue */
+    --chart-2: 195 90% 60%; /* Accent Blue (Cyan) */
+    --chart-3: 220 60% 65%; /* Medium Blue */
+    --chart-4: 200 70% 50%; /* Sky Blue */
+    --chart-5: 230 50% 70%;  /* Indigo/Lighter Purple-Blue */
   }
 
   .dark {
-    /* Alternative Gaming Theme: True Black with Fiery Accents (Orange/Yellow) */
-    --background: 0 0% 4%; /* Near Black */
-    --foreground: 0 0% 92%; /* Very Light Grey */
+    /* Alternative Black and Blue Theme (Could be near identical or slightly different) */
+    --background: 0 0% 2%; /* True Black */
+    --foreground: 205 50% 88%; /* Light Cyan-Blue */
 
-    --card: 0 0% 8%; /* Dark Grey Card */
-    --card-foreground: 0 0% 92%;
+    --card: 220 10% 7%; /* Very Dark Blue Card */
+    --card-foreground: 205 50% 88%;
 
-    --popover: 0 0% 5%; /* Darker Popover */
-    --popover-foreground: 0 0% 92%;
+    --popover: 0 0% 4%; /* Darker Popover */
+    --popover-foreground: 205 50% 88%;
 
-    --primary: 30 100% 55%; /* Fiery Orange */
-    --primary-foreground: 30 100% 10%; /* Very Dark Brown/Black for text on Orange */
+    --primary: 200 100% 50%; /* Electric Cyan */
+    --primary-foreground: 220 10% 5%; /* Very Dark Blue for text on Electric Cyan */
 
-    --secondary: 15 60% 25%; /* Dark Red/Brown */
-    --secondary-foreground: 0 0% 85%;
+    --secondary: 220 25% 18%; /* Dark Slate Blue */
+    --secondary-foreground: 205 40% 75%;
 
-    --muted: 0 0% 15%; /* Dark Grey for muted */
-    --muted-foreground: 0 0% 50%;
+    --muted: 220 5% 12%; /* Darker Grey-Blue for muted */
+    --muted-foreground: 210 10% 45%;
 
-    --accent: 50 100% 55%; /* Electric Yellow */
-    --accent-foreground: 50 100% 10%; /* Dark text on Yellow */
+    --accent: 210 100% 70%; /* Bright Sky Blue */
+    --accent-foreground: 220 10% 10%; /* Dark text on Sky Blue */
 
-    --destructive: 0 90% 60%; /* More intense Red */
-    --destructive-foreground: 0 0% 98%;
+    --destructive: 210 40% 30%; /* Darker, more desaturated blue for destructive */
+    --destructive-foreground: 205 50% 88%;
 
-    --border: 0 0% 12%; /* Subtle Dark Border */
-    --input: 0 0% 10%; /* Dark Input Background */
-    --ring: 30 100% 55%; /* Orange for focus rings */
+    --border: 220 10% 15%; /* Subtle Dark Blue Border */
+    --input: 220 8% 10%; /* Dark Input Background */
+    --ring: 200 100% 50%; /* Electric Cyan for focus rings */
 
-    /* Sidebar specific colors - aligned with Orange/Yellow theme */
-    --sidebar-background: 0 0% 2%; /* True Black for sidebar */
-    --sidebar-foreground: 0 0% 88%;
-    --sidebar-primary: 30 100% 55%;    /* Orange for active/primary items */
-    --sidebar-primary-foreground: 30 100% 10%;
-    --sidebar-accent: 0 0% 10%;         /* Dark hover for sidebar items */
-    --sidebar-accent-foreground: 0 0% 95%;
-    --sidebar-border: 0 0% 9%;
-    --sidebar-ring: 30 100% 55%;
+    /* Sidebar specific colors - Black and Blue (Dark variant) */
+    --sidebar-background: 0 0% 0%; /* True Black for sidebar */
+    --sidebar-foreground: 205 50% 85%;
+    --sidebar-primary: 200 100% 50%;    /* Electric Cyan for active/primary items */
+    --sidebar-primary-foreground: 220 10% 5%;
+    --sidebar-accent: 220 10% 10%;         /* Dark hover for sidebar items */
+    --sidebar-accent-foreground: 205 50% 90%;
+    --sidebar-border: 220 5% 8%;
+    --sidebar-ring: 200 100% 50%;
 
-    /* Chart colors for Orange/Yellow theme */
-    --chart-1: 30 100% 55%; /* Orange */
-    --chart-2: 50 100% 55%; /* Yellow */
-    --chart-3: 0 80% 60%;   /* Red */
-    --chart-4: 200 70% 50%; /* Cyan (for contrast) */
-    --chart-5: 120 60% 50%; /* Green (for contrast) */
+    /* Chart colors for Black and Blue theme (Dark variant) */
+    --chart-1: 200 100% 50%; /* Electric Cyan */
+    --chart-2: 210 100% 70%; /* Bright Sky Blue */
+    --chart-3: 220 70% 60%;  /* Royal Blue */
+    --chart-4: 190 80% 55%;  /* Tealish Blue */
+    --chart-5: 240 50% 65%;  /* Purple-Blue */
   }
 }
 
