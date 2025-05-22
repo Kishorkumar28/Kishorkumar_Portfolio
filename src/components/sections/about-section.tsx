@@ -79,11 +79,11 @@ const AboutSection: FC = () => {
     <section
       id="about"
       ref={sectionRef}
-      className="min-h-screen flex items-center justify-center bg-secondary text-secondary-foreground py-16 px-4 opacity-0"
+      className="min-h-screen flex items-center justify-center bg-secondary text-secondary-foreground py-16 px-4 opacity-0" // Initial opacity 0 for GSAP
     >
       <div className="container mx-auto">
         <div className="text-center mb-12 animate-gsap-child">
-          <h2 className="text-3xl sm:text-4xl font-bold tracking-tight">
+          <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-primary"> {/* Changed text color for visibility */}
             About Me
           </h2>
           <p className="mt-4 text-lg text-secondary-foreground/80 max-w-2xl mx-auto">
@@ -92,17 +92,15 @@ const AboutSection: FC = () => {
         </div>
 
         <div className="grid md:grid-cols-2 gap-12 items-center">
-          {/* Removed 'animate-gsap-child' from this div to help isolate image visibility issues */}
           <div className="flex justify-center md:justify-start"> 
             <div className="relative w-64 h-64 sm:w-80 sm:h-80 rounded-full overflow-hidden shadow-2xl border-4 border-secondary-foreground/20">
               <Image
                 src="/memoji-kishorkumar.png"
-                alt={siteConfig.author}
+                alt="Profile picture" 
                 data-ai-hint="memoji avatar"
                 layout="fill"
                 objectFit="cover"
                 className="transform hover:scale-105 transition-transform duration-500"
-                priority // Suggests eager loading
               />
             </div>
           </div>
@@ -167,3 +165,4 @@ const AboutSection: FC = () => {
 };
 
 export default AboutSection;
+
