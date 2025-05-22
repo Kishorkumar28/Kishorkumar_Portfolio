@@ -93,7 +93,7 @@ const AboutSection: FC = () => {
         </div>
 
         <div className="grid md:grid-cols-2 gap-12 items-center">
-          <div className="flex justify-center md:justify-center"> {/* Changed md:justify-start to md:justify-center */}
+          <div className="flex justify-center md:justify-center animate-gsap-child"> {/* Changed md:justify-start to md:justify-center */}
             <div className="relative w-64 h-64 sm:w-80 sm:h-80 rounded-full overflow-hidden shadow-2xl border-4 border-secondary-foreground/20">
               <Image
                 src={ProfileImageFile}
@@ -135,9 +135,7 @@ const AboutSection: FC = () => {
             </div>
             <Button asChild size="lg" variant="outline" className="shadow-md hover:shadow-lg transition-shadow text-secondary-foreground border-secondary-foreground/50 hover:bg-accent hover:text-accent-foreground hover:border-accent">
               <Link href="/skills" passHref legacyBehavior>
-                <a>
-                  Explore All My Skills
-                </a>
+                <a>Explore All My Skills</a>
               </Link>
             </Button>
           </div>
@@ -145,7 +143,7 @@ const AboutSection: FC = () => {
 
         <div className="mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {[
-            { icon: <Award className="h-8 w-8 text-accent" />, title: "Experience", text: "X+ Years in Web Development" },
+            { icon: <Award className="h-8 w-8 text-accent" />, title: "Fresher", text: "Eager to Learn & Contribute" },
             { icon: <Brain className="h-8 w-8 text-accent" />, title: "Problem Solver", text: "Innovative and Analytical" },
             { icon: <Code className="h-8 w-8 text-accent" />, title: "MERN Expert", text: "Full-Stack Proficiency" },
             { icon: <Users className="h-8 w-8 text-accent" />, title: "Team Player", text: "Collaborative & Communicative" },
@@ -156,7 +154,7 @@ const AboutSection: FC = () => {
             >
               <div className="flex justify-center mb-4">{item.icon}</div>
               <h4 className="text-xl font-semibold mb-2 text-card-foreground">{item.title}</h4>
-              <p className="text-sm text-muted-foreground">{item.text.replace("X+", "X")}</p>
+              <p className="text-sm text-muted-foreground">{item.text}</p>
             </div>
           ))}
         </div>
