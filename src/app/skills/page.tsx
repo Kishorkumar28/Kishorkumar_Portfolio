@@ -53,7 +53,7 @@ const SkillsPage: NextPage = () => {
                       <div key={skill.id} className="space-y-1.5">
                         <div className="flex justify-between items-center">
                           <h3 className="text-md font-medium text-foreground">{skill.name}</h3>
-                          <span className="text-sm text-accent font-semibold">{skill.level}%</span>
+                          {/* Percentage text removed from here */}
                         </div>
                         <Progress value={skill.level} aria-label={`${skill.name} proficiency: ${skill.level}%`} className="h-3 [&>div]:bg-accent" />
                       </div>
