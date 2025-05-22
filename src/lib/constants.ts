@@ -73,12 +73,12 @@ export const projects: ProjectData[] = [
     id: 'project-mentore-agro',
     title: 'Mentore Agro Fertilizer Company',
     description: 'Freelance website development for an agro fertilizer company, built with the MERN stack, focusing on product showcase and company information.',
-    longDescription: "This personal freelance project involved developing a comprehensive website for Mentore Agro Fertilizer Company. The site was built using the MERN stack (MongoDB, Express.js, React, Node.js) to deliver a robust and dynamic online presence for the company. Key features include a detailed product catalog for their fertilizer products, company information, contact forms, and a user-friendly interface to enhance customer engagement. This project demonstrates the ability to deliver full-stack solutions tailored to client needs.",
+    longDescription: "This personal project involved developing a comprehensive website for Mentore Agro Fertilizer Company. The site was built using the MERN stack (MongoDB, Express.js, React, Node.js) to deliver a robust and dynamic online presence for the company. Key features include a detailed product catalog for their fertilizer products, company information, contact forms, and a user-friendly interface to enhance customer engagement. This project demonstrates the ability to deliver full-stack solutions tailored to client needs.",
     imageUrl: mentoreAgroImageFile,
     dataAiHint: 'agro fertilizer',
     technologies: ['React', 'HTML', 'CSS', 'JavaScript', 'MongoDB', 'Node.js', 'Express.js'],
     liveLink: 'https://mentor-eagroproducts.netlify.app/',
-    // repoLink: '#', // Add if available
+    repoLink: 'https://github.com/Kishorkumar28/Mentore_agro',
   },
   {
     id: 'project-1',
