@@ -37,6 +37,7 @@ export const skills: SkillData[] = [
   { id: 'git', name: 'Git & GitHub', level: 85, category: 'Tools' },
   { id: 'restapi', name: 'RESTful APIs', level: 90, category: 'Backend' },
   { id: 'nextjs', name: 'Next.js', level: 80, category: 'Frontend' },
+  { id: 'sql', name: 'SQL', level: 80, category: 'Database' },
 ];
 
 
