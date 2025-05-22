@@ -92,6 +92,7 @@ export const siteConfig = {
   name: "EtherealFolio",
   title: "EtherealFolio - Full-Stack Developer",
   description: "Portfolio of a Full-Stack Developer specializing in MERN stack and modern web technologies.",
-  author: "Your Name Here", // Replace with actual name
-  professionalSummary: "A passionate and results-driven Full-Stack Developer with X years of experience in designing, developing, and deploying web applications using the MERN stack and other modern technologies. Proficient in building scalable, responsive, and user-friendly solutions. Strong problem-solving skills and a collaborative team player dedicated to continuous learning and innovation.", // Replace X and customize
+  author: "Kishorkumar K.",
+  professionalSummary: "Creative and detail-oriented Full Stack Developer with strong proficiency in the MERN stack, including React.js, Node.js, and MongoDB. Experienced in building responsive and dynamic web applications, including a full-featured Airbnb clone. Passionate about clean UI/UX, efficient code, and solving real-world problems through technology. Seeking to contribute to forward-thinking development teams in a full stack or specialized front-/back- end role",
 };
+
