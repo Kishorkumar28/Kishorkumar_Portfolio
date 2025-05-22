@@ -170,7 +170,7 @@ const TechStackSection: FC = () => {
           My Tech Arsenal
         </h2>
         {techStackItems.length > 0 ? (
-          <div className="relative w-full overflow-x-hidden group">
+          <div className="relative w-full overflow-x-hidden overflow-y-hidden group"> {/* Added overflow-y-hidden here */}
             <div className="flex animate-scroll-left group-hover:animation-pause">
               {[...techStackItems, ...techStackItems].map((item, index) => ( 
                 <div 
@@ -195,3 +195,4 @@ const TechStackSection: FC = () => {
 };
 
 export default TechStackSection;
+
