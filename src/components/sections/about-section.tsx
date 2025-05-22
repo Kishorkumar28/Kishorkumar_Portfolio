@@ -93,7 +93,7 @@ const AboutSection: FC = () => {
         </div>
 
         <div className="grid md:grid-cols-2 gap-12 items-center">
-          <div className="flex justify-center md:justify-start">
+          <div className="flex justify-center md:justify-center"> {/* Changed md:justify-start to md:justify-center */}
             <div className="relative w-64 h-64 sm:w-80 sm:h-80 rounded-full overflow-hidden shadow-2xl border-4 border-secondary-foreground/20">
               <Image
                 src={ProfileImageFile}
