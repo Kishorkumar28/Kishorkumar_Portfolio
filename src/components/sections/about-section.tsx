@@ -23,12 +23,13 @@ const AboutSection: FC = () => {
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: el,
-          start: "top 85%",
-          end: "top 35%",
-          scrub: 1,
+          start: "top 85%", // When the top of the section is 85% from the top of the viewport
+          end: "top 35%",   // When the top of the section is 35% from the top of the viewport
+          scrub: 1,         // Smooth scrubbing effect
         }
       });
 
+      // Animate the entire section from scale 0.8, opacity 0 to scale 1, opacity 1
       tl.fromTo(el,
         { scale: 0.8, opacity: 0 },
         { scale: 1, opacity: 1, ease: "power2.inOut", duration: 1 }
@@ -96,9 +97,9 @@ const AboutSection: FC = () => {
           <div className="flex justify-center md:justify-start animate-gsap-child">
             <div className="relative w-64 h-64 sm:w-80 sm:h-80 rounded-full overflow-hidden shadow-2xl border-4 border-secondary-foreground/20">
               <Image
-                src="https://placehold.co/400x400.png"
+                src="/memoji-kishorkumar.png"
                 alt={siteConfig.author}
-                data-ai-hint="professional portrait"
+                data-ai-hint="memoji avatar"
                 layout="fill"
                 objectFit="cover"
                 className="transform hover:scale-105 transition-transform duration-500"
