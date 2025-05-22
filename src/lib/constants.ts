@@ -62,19 +62,19 @@ export const projects: ProjectData[] = [
     id: 'project-airbnb-clone',
     title: 'Airbnb Clone',
     description: 'A full-stack clone of Airbnb, demonstrating key booking, listing, and user management features using the MERN stack.',
-    longDescription: "This project is a comprehensive full-stack clone of the popular Airbnb platform, developed using the MERN stack (MongoDB, Express.js, React, Node.js). It aims to replicate core functionalities such as user registration and authentication, property listings with detailed descriptions and images, searching and filtering properties, booking management, and user profiles. The frontend is built with React, leveraging its component-based architecture for a dynamic and responsive user interface. The backend, powered by Node.js and Express.js, provides robust RESTful APIs for data handling and business logic, with MongoDB serving as the database. This project showcases skills in full-stack development, API design, and user interface implementation.",
+    longDescription: "This project is a comprehensive full-stack clone of the popular Airbnb platform, developed using the MERN stack (MongoDB, Express.js, React, Node.js). It aims to replicate core functionalities such as user registration and authentication, property listings with detailed descriptions and images, searching and filtering properties, booking management, and user profiles. The frontend is built with React, leveraging its component-based architecture for a dynamic and responsive user interface. The backend, powered by Node.js and Express.js, provides robust RESTful APIs for data handling and business logic, with MongoDB serving as the database. This project showcases skills in full-stack development, API design, and user interface implementation.\n\nBackend code: https://github.com/Kishorkumar28/Clone_OfAirbnb_backend",
     imageUrl: airbnbCloneImageFile,
     dataAiHint: 'airbnb project',
     technologies: ['React', 'HTML', 'CSS', 'JavaScript', 'MongoDB', 'Node.js', 'Express.js'],
     liveLink: 'https://projecthotelbookingbykishor.netlify.app/',
-    // repoLink: '#', // Add if available
+    repoLink: 'https://github.com/Kishorkumar28/Airbnb_clone_Front-End-Code',
   },
   {
     id: 'project-mentore-agro',
     title: 'Mentore Agro Fertilizer Company',
     description: 'Freelance website development for an agro fertilizer company, built with the MERN stack, focusing on product showcase and company information.',
     longDescription: "This personal freelance project involved developing a comprehensive website for Mentore Agro Fertilizer Company. The site was built using the MERN stack (MongoDB, Express.js, React, Node.js) to deliver a robust and dynamic online presence for the company. Key features include a detailed product catalog for their fertilizer products, company information, contact forms, and a user-friendly interface to enhance customer engagement. This project demonstrates the ability to deliver full-stack solutions tailored to client needs.",
-    imageUrl: mentoreAgroImageFile, // Use the imported image
+    imageUrl: mentoreAgroImageFile,
     dataAiHint: 'agro fertilizer',
     technologies: ['React', 'HTML', 'CSS', 'JavaScript', 'MongoDB', 'Node.js', 'Express.js'],
     liveLink: 'https://mentor-eagroproducts.netlify.app/',
