@@ -8,7 +8,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { siteConfig, skills } from '@/lib/constants';
-import { Award, Brain, Code, Users, BookOpen } from 'lucide-react'; // Added BookOpen for education
+import { Award, Brain, Code, Users, BookOpen } from 'lucide-react';
 import Image from 'next/image';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -23,25 +23,23 @@ const AboutSection: FC = () => {
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: el,
-          start: "top 85%", // When the top of the section is 85% from the top of the viewport
-          end: "top 35%",   // When the top of the section is 35% from the top of the viewport
-          scrub: 1,         // Smooth scrubbing effect
+          start: "top 85%", 
+          end: "top 35%",   
+          scrub: 1,         
         }
       });
 
-      // Animate the entire section from scale 0.8, opacity 0 to scale 1, opacity 1
       tl.fromTo(el,
         { scale: 0.8, opacity: 0 },
         { scale: 1, opacity: 1, ease: "power2.inOut", duration: 1 }
       );
 
-      // Animate direct children text elements and image container for a layered effect, after the main section reveal
       const childElements = el.querySelectorAll('.animate-gsap-child');
-      childElements.forEach((child) => { // Removed index as it's not used in this simplified staggering
+      childElements.forEach((child) => { 
         tl.fromTo(child,
           { opacity: 0, y: 20 },
           { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" },
-          ">-0.3" // Stagger start times slightly
+          ">-0.3" 
         );
       });
       
@@ -57,10 +55,10 @@ const AboutSection: FC = () => {
             ease: "power2.out",
             scrollTrigger: {
               trigger: card,
-              start: "top 90%", // Start animation when 90% of the card is visible
-              toggleActions: "play none none none", // Play animation once when it enters viewport
+              start: "top 90%", 
+              toggleActions: "play none none none", 
             },
-            delay: index * 0.1 // Stagger the animation for each card
+            delay: index * 0.1 
           }
         );
       });
@@ -81,7 +79,7 @@ const AboutSection: FC = () => {
     <section
       id="about"
       ref={sectionRef}
-      className="min-h-screen flex items-center justify-center bg-secondary text-secondary-foreground py-16 px-4 opacity-0" // Initial opacity for GSAP
+      className="min-h-screen flex items-center justify-center bg-secondary text-secondary-foreground py-16 px-4 opacity-0"
     >
       <div className="container mx-auto">
         <div className="text-center mb-12 animate-gsap-child">
@@ -94,7 +92,8 @@ const AboutSection: FC = () => {
         </div>
 
         <div className="grid md:grid-cols-2 gap-12 items-center">
-          <div className="flex justify-center md:justify-start animate-gsap-child">
+          {/* Removed 'animate-gsap-child' from this div to help isolate image visibility issues */}
+          <div className="flex justify-center md:justify-start"> 
             <div className="relative w-64 h-64 sm:w-80 sm:h-80 rounded-full overflow-hidden shadow-2xl border-4 border-secondary-foreground/20">
               <Image
                 src="/memoji-kishorkumar.png"
@@ -103,6 +102,7 @@ const AboutSection: FC = () => {
                 layout="fill"
                 objectFit="cover"
                 className="transform hover:scale-105 transition-transform duration-500"
+                priority // Suggests eager loading
               />
             </div>
           </div>
@@ -135,7 +135,7 @@ const AboutSection: FC = () => {
             </div>
             <Button asChild size="lg" variant="outline" className="shadow-md hover:shadow-lg transition-shadow text-secondary-foreground border-secondary-foreground/50 hover:bg-accent hover:text-accent-foreground hover:border-accent">
               <Link href="/skills" passHref legacyBehavior>
-                <a> {/* Explicit <a> tag for legacyBehavior */}
+                <a>
                   Explore All My Skills
                 </a>
               </Link>
@@ -167,4 +167,3 @@ const AboutSection: FC = () => {
 };
 
 export default AboutSection;
-
