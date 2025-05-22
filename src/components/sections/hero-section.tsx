@@ -9,10 +9,10 @@ const HeroSection: FC = () => {
   return (
     <section
       id="hero"
-      className="h-[175vh] relative overflow-hidden px-4 bg-gradient-to-br from-background to-secondary/30"
+      className="h-[140vh] relative overflow-hidden px-4 bg-gradient-to-br from-background to-secondary/30" // Reduced height from 175vh
     >
       <div className="absolute inset-0 opacity-5">
-        {/* Subtle background pattern or image can go here, it will scroll with the 175vh section */}
+        {/* Subtle background pattern or image can go here, it will scroll with the 140vh section */}
       </div>
 
       <div className="sticky top-0 h-screen w-full flex flex-col items-center justify-center pt-16 md:pt-0">
