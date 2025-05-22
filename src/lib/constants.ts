@@ -2,6 +2,7 @@
 import type { LucideIcon } from 'lucide-react';
 import type { StaticImageData } from 'next/image';
 import airbnbCloneImageFile from '../images/airbnb_clone.png';
+import mentoreAgroImageFile from '../images/mentore.png'; // Import the new image
 
 export interface NavLinkData {
   href: string;
@@ -66,6 +67,17 @@ export const projects: ProjectData[] = [
     dataAiHint: 'airbnb project',
     technologies: ['React', 'HTML', 'CSS', 'JavaScript', 'MongoDB', 'Node.js', 'Express.js'],
     liveLink: 'https://projecthotelbookingbykishor.netlify.app/',
+    // repoLink: '#', // Add if available
+  },
+  {
+    id: 'project-mentore-agro',
+    title: 'Mentore Agro Fertilizer Company',
+    description: 'Freelance website development for an agro fertilizer company, built with the MERN stack, focusing on product showcase and company information.',
+    longDescription: "This personal freelance project involved developing a comprehensive website for Mentore Agro Fertilizer Company. The site was built using the MERN stack (MongoDB, Express.js, React, Node.js) to deliver a robust and dynamic online presence for the company. Key features include a detailed product catalog for their fertilizer products, company information, contact forms, and a user-friendly interface to enhance customer engagement. This project demonstrates the ability to deliver full-stack solutions tailored to client needs.",
+    imageUrl: mentoreAgroImageFile, // Use the imported image
+    dataAiHint: 'agro fertilizer',
+    technologies: ['React', 'HTML', 'CSS', 'JavaScript', 'MongoDB', 'Node.js', 'Express.js'],
+    liveLink: 'https://mentor-eagroproducts.netlify.app/',
     // repoLink: '#', // Add if available
   },
   {
