@@ -93,7 +93,11 @@ export default {
         'scale-in': { '0%': { opacity: '0', transform: 'scale(0.95)' }, '100%': { opacity: '1', transform: 'scale(1)' } },
         'scroll-left': {
           '0%': { transform: 'translateX(0)' },
-          '100%': { transform: 'translateX(-50%)' }, // Moves half the total width (one set of items)
+          '100%': { transform: 'translateX(-50%)' }, 
+        },
+        'blink': {
+          '0%, 100%': { opacity: '1' },
+          '50%': { opacity: '0' },
         },
   		},
   		animation: {
@@ -105,13 +109,14 @@ export default {
         'fade-in-left': 'fade-in-left 0.6s ease-out forwards',
         'fade-in-right': 'fade-in-right 0.6s ease-out forwards',
         'scale-in': 'scale-in 0.6s ease-out forwards',
-        'scroll-left': 'scroll-left 12.5s linear infinite', // Adjusted duration for 2x speed from 25s
+        'scroll-left': 'scroll-left 12.5s linear infinite',
+        'blink': 'blink 0.8s step-end infinite',
   		}
   	}
   },
   plugins: [
     require("tailwindcss-animate"),
-    require('tailwind-scrollbar'), // Added for scrollbar styling
+    require('tailwind-scrollbar'),
     plugin(function({ addUtilities }: { addUtilities: Function }) {
       const newUtilities = {
         '.animation-delay-100': { 'animation-delay': '0.1s' },
