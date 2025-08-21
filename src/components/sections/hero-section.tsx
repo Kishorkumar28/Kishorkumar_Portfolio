@@ -54,12 +54,11 @@ const HeroSection: FC = () => {
       } else { // Typing
         if (charIndex < currentFullSentence.length) {
           setDisplayedText(currentFullSentence.substring(0, charIndex + 1));
-          setCharIndex((prev) => prev + 1);
+          setCharIndex((prev) => prev - 1);
         } else { // Finished typing current sentence
           setIsPaused(true); // Pause
           setTimeout(() => {
             setIsDeleting(true); // Prepare to delete the currently displayed sentence
-            // charIndex is already at currentFullSentence.length
             setIsPaused(false); // Unpause to start deletion
           }, PAUSE_DURATION);
         }
@@ -68,7 +67,7 @@ const HeroSection: FC = () => {
 
     const timeoutId = setTimeout(handleTypingEffect, isDeleting ? DELETING_SPEED : TYPING_SPEED);
     return () => clearTimeout(timeoutId);
-  }, [charIndex, sentenceIndex, isDeleting, isPaused, displayedText]); // displayedText re-triggers effect on change
+  }, [charIndex, sentenceIndex, isDeleting, isPaused]); // removed displayedText
 
   return (
     <section
