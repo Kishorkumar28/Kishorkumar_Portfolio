@@ -10,7 +10,7 @@ import Link from 'next/link';
 import { siteConfig, skills } from '@/lib/constants';
 import { Award, Brain, Code, Users, BookOpen } from 'lucide-react';
 import Image from 'next/image';
-import ProfileImageFile from '../../images/memoji.jpg'; // Import the image
+import ProfileImageFile from '../../images/Kishor_kumar_image.png'; // Import the image
 
 gsap.registerPlugin(ScrollTrigger);
 
